@@ -18,7 +18,19 @@ const routes: Routes = [
   {
     path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },  {
+    path: 'recetas',
+    loadChildren: () => import('./pages/recetas/recetas.module').then( m => m.RecetasPageModule)
   },
+  {
+    path: 'apoyo',
+    loadChildren: () => import('./pages/apoyo/apoyo.module').then( m => m.ApoyoPageModule)
+  },
+  {
+    path: 'historial',
+    loadChildren: () => import('./pages/historial/historial.module').then( m => m.HistorialPageModule)
+  },
+
 
 ];
 

@@ -16,6 +16,18 @@ const routes: Routes = [
         path: 'login',
         loadChildren: () => import('../login/login.module').then( m => m.LoginPageModule)
       },
+      {
+        path: 'recetas',
+        loadChildren: () => import('../recetas/recetas.module').then( m => m.RecetasPageModule)
+      },
+      {
+        path: 'apoyo',
+        loadChildren: () => import('../apoyo/apoyo.module').then( m => m.ApoyoPageModule)
+      },
+      {
+        path: 'historial',
+        loadChildren: () => import('../historial/historial.module').then( m => m.HistorialPageModule)
+      },
     ]
   }
 ];
