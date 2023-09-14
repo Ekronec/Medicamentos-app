@@ -1,22 +1,32 @@
-.card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  #card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .image-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 16px;
-  }
-  
-  .image-container img {
-    max-width: 100%;
-  }
+#logo{
+  align-items: center;
+  text-align: center;
+}
+p{
+  align-items: center;
+  text-align: center;
+}
+
+#remember{
+  padding-top: 10%;
+  align-items: center;
+  text-align: right;
+}
+
+#forget{
+  padding-top: 10%;
+  align-items: center;
+  text-align: center;
+  font-size: small;
+}
+
+.action-button{
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.signup-button{
+  margin-top: 10%;
+  font-size: smaller;
+}
