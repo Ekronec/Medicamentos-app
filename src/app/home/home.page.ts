@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InfiniteScrollCustomEvent } from '@ionic/angular';
+import { createAnimation } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -13,3 +14,7 @@ export class HomePage {
 }
 
 export class HomePageComponent {}
+
+const animation = createAnimation();
+
+
