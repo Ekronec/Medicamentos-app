@@ -48,6 +48,7 @@ export class RecetasPage implements OnInit {
   agregarMedicamentoSeleccionado(medicamento: string): void {
     this.medicamentosSeleccionados.push(medicamento);
     this.busqueda = ''; // Borra el campo de búsqueda después de agregar el medicamento.
+    this.sugerencias = [];
   }
   
 
