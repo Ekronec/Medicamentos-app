@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "medicamentos-app-5b581": {
+      "hosting": {
+        "app": [
+          "medicamentos-app-5b581"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "medicamentos-app-5b581"
+  }
+}
