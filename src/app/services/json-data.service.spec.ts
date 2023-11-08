@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AppStorageService } from './app-storage.service';
+import { JsonDataService } from './json-data.service';
 
-describe('AppStorageService', () => {
-  let service: AppStorageService;
+describe('JsonDataService', () => {
+  let service: JsonDataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(AppStorageService);
+    service = TestBed.inject(JsonDataService);
   });
 
   it('should be created', () => {

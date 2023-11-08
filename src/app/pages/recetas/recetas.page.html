@@ -10,4 +10,28 @@
       <ion-title size="large">recetas</ion-title>
     </ion-toolbar>
   </ion-header>
+  <div *ngIf="jsonData">
+    <h2>{{ jsonData.title }}</h2>
+    <ul>
+      <li *ngFor="let item of jsonData.items">{{ item.name }}</li>
+    </ul>
+  </div>
+  
 </ion-content>
+
+
+
+<!-- Ejemplo para mostrar lista de medicamentos a traves del json: 
+<ion-content>
+  <ion-spinner *ngIf="loading"></ion-spinner>
+  <div *ngIf="!loading && jsonData">
+    <h2>Lista de Medicamentos</h2>
+    <ul>
+      <li *ngFor="let record of jsonData.records">
+        {{ record[2] }}  '2' es el índice del campo "Nombre Producto" en el registro 
+      </li>
+    </ul>
+  </div>
+</ion-content>
+
+-->
