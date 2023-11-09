@@ -8,14 +8,14 @@
       <div class="form-input">
         <ion-item >
           <ion-label position="floating">Correo</ion-label>
-          <ion-input type="email"></ion-input>
+          <ion-input type="email" [(ngModel)]="user.email" requierd></ion-input>
         </ion-item>
       </div>
       <div class="form-input">
         <ion-icon name="lock-close-outline"></ion-icon>
         <ion-item >
           <ion-label position="floating">Contraseña</ion-label>
-          <ion-input type="password" value=""></ion-input>
+          <ion-input type="password" [(ngModel)]="user.password" requierd></ion-input>
         </ion-item>
       </div>
       <div id="remember">
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="action-button ion-padding">
-      <ion-button size="large" class="login-button">Ingresar</ion-button>
+      <ion-button size="large" class="login-button"(click)="login(user)">Ingresar</ion-button>
       <br>
       <ion-button class="signup-button" size="large" fill="outline" [routerLink]="['/registro']">Registrarse</ion-button>
     </div>
