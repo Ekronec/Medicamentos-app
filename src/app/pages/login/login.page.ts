@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+
+import { OpenCloseComponent } from '../../open-close/open-close.component'; // Importa la clase OpenCloseComponent
+
 import { LoadingController, ToastController } from '@ionic/angular';
 import { User } from "../../models/user.model";
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-login',
@@ -10,6 +14,12 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  isOpen = true;
+
+
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
 
   user = {} as User;
 
@@ -70,4 +80,6 @@ export class LoginPage implements OnInit {
     }).then(toastData => toastData.present());
   }
 
+
+  ngOnInit() {}
 }

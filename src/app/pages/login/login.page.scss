@@ -30,3 +30,15 @@ p{
   margin-top: 10%;
   font-size: smaller;
 }
+.abtn {
+  transition: all 0.3s ease;
+  float: right;
+}
+
+.abtn.small {
+  transform: scale(0.8);
+}
+
+.abtn.large {
+  transform: scale(1.2);
+}
