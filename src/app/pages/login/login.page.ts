@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { OpenCloseComponent } from '../../open-close/open-close.component'; // Importa la clase OpenCloseComponent
+//import { OpenCloseComponent } from '../../open-close/open-close.component'; // Importa la clase OpenCloseComponent
 
 import { LoadingController, ToastController } from '@ionic/angular';
 import { User } from "../../models/user.model";
@@ -30,8 +30,7 @@ export class LoginPage implements OnInit {
     private navCtrl: NavController
   ) { }
 
-  ngOnInit() {
-  }
+
   async login(user: User) {
     
     if (this.formValidation()) {
