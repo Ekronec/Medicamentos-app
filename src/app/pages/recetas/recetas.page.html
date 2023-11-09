@@ -1,23 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>recetas</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">recetas</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <div *ngIf="jsonData">
-    <h2>{{ jsonData.title }}</h2>
-    <ul>
-      <li *ngFor="let item of jsonData.items">{{ item.name }}</li>
-    </ul>
-  </div>
+<ion-content>
+  <ion-searchbar
+    [(ngModel)]="busqueda"
+    (ionChange)="buscarMedicamentos(busqueda)"
+  ></ion-searchbar>
   
+  <ion-list *ngIf="sugerencias.length > 0">
+    <ion-item *ngFor="let sugerencia of sugerencias" (click)="agregarMedicamentoSeleccionado(sugerencia)">
+      {{ sugerencia }}
+    </ion-item>
+  </ion-list>
+  
+  <ion-list>
+    <ion-item *ngFor="let medicamento of medicamentosSeleccionados">
+      {{ medicamento }}
+    </ion-item>
+  </ion-list>
 </ion-content>
+
 
 
 
