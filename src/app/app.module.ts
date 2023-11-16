@@ -12,14 +12,19 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import { AngularFireModule } from "@angular/fire/compat";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 
+import { MapaComponent } from './component/mapa/mapa.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MapaComponent],
   imports: [BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule, 
     AngularFireModule.initializeApp(environment.FIREBASE_CONFIG),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ReactiveFormsModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

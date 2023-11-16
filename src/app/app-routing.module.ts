@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { MapaComponent } from './component/mapa/mapa.component';
 
 const routes: Routes = [
   {
@@ -8,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'registro',
+    redirectTo: 'mapa',
     pathMatch: 'full'
   },
   {
@@ -35,7 +36,10 @@ const routes: Routes = [
     path: 'historial',
     loadChildren: () => import('./pages/historial/historial.module').then( m => m.HistorialPageModule)
   },
-
+  {
+    path: 'mapa', component:MapaComponent
+    
+  },
 
 ];
 

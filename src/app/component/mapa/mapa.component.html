@@ -1,0 +1,25 @@
+<h1>Mapa Angular</h1>
+
+<button (click)="mapRuta()">Calcular ruta</button>
+<h1>La distancia es: {{distancia}}</h1>
+
+
+<div class="formulario">
+    <form [formGroup]="formMapas" (ngSubmit)="onSubmit()">
+  
+      <input type="text" #inputPlaces id="inputPlaces" formControlName="busqueda">
+  
+      <div class="form panel">
+  
+        <div>
+          <img class="sb-title-icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/location_pin/v5/24px.svg"
+            alt="">
+        </div>
+  
+  
+      </div>
+
+      <div class="mapa" #divMap></div>
+      
+    </form>
+  </div>
