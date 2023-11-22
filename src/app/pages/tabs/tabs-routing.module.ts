@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { MapaComponent } from '../../component/mapa/mapa.component';
 
 import { TabsPage } from './tabs.page';
 
@@ -25,8 +26,7 @@ const routes: Routes = [
         loadChildren: () => import('../apoyo/apoyo.module').then( m => m.ApoyoPageModule)
       },
       {
-        path: 'historial',
-        loadChildren: () => import('../historial/historial.module').then( m => m.HistorialPageModule)
+        path: 'mapa', component:MapaComponent
       },
     ]
   }
