@@ -79,9 +79,9 @@ export class MapaComponent  implements OnInit {
 
     directionService.route({
 
-      origin: 'Quilpué, Chile',
-      destination: 'Viña del Mar, Chile',
-      travelMode: google.maps.TravelMode.DRIVING
+      origin: 'Antonio Varas 666, Providencia, Región Metropolitana',
+      destination: 'Farmacias Ahumada - Av. Nueva Providencia 1313, 7500592 Santiago, Providencia, Región Metropolitana',
+      travelMode: google.maps.TravelMode.WALKING
 
     }, resultado => {
       console.log(resultado);
