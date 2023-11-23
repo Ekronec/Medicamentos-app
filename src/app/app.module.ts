@@ -26,10 +26,12 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireModule.initializeApp(environment.FIREBASE_CONFIG),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    ReactiveFormsModule,
-    HttpClientModule
+
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, JsonDataService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },JsonDataService],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}
