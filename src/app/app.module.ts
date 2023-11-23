@@ -14,6 +14,8 @@ import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 
 import { MapaComponent } from './component/mapa/mapa.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { JsonDataService } from './services/json-data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,9 +26,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     AngularFireModule.initializeApp(environment.FIREBASE_CONFIG),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },JsonDataService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

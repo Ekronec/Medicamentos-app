@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'mapa',
+    redirectTo: 'tabs',
     pathMatch: 'full'
   },
   {
