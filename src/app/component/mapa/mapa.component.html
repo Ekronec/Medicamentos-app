@@ -3,7 +3,8 @@
     <form [formGroup]="formMapas" (ngSubmit)="onSubmit()">
       <label for="inputPlaces" class="sb-title">Buscar Farmacia:</label>
       <div class="half-input-container">
-        <input type="text" #inputPlaces id="inputPlaces" formControlName="busqueda" placeholder="Ingrese la dirección">
+        <!-- Asegúrate de que los campos estén vinculados correctamente -->
+        <input type="text" #inputPlaces formControlName="busqueda" placeholder="Ingrese la dirección">
         <button type="submit" class="button-cta">Buscar</button>
       </div>
       <div class="mapa" #divMap></div>
@@ -11,7 +12,7 @@
   </div>
   <div class="ruta-container">
     <label class="etiqueta">Pulsa para ver la farmacia más cercana</label>
-    <ion-icon (click)="mapRuta()" name="compass-outline" class="icono"></ion-icon>
+    <ion-icon (click)="ubicacionActual ? obtenerFarmaciasCercanas(ubicacionActual) : null" name="compass-outline" class="icono"></ion-icon>
     <h3>Estás a {{distancia}} de la farmacia más cercana</h3>
   </div>
 </div>
