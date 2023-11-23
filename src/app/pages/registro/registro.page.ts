@@ -37,7 +37,7 @@ export class RegistroPage implements OnInit {
         await this.afAuth.createUserWithEmailAndPassword(user.email, user.password).then(data => {
           console.log(data);
 
-          this.navCtrl.navigateRoot("home")
+          this.navCtrl.navigateRoot("tabs")
         })
 
       } catch (e: any) {

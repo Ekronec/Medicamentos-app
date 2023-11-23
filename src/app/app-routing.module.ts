@@ -9,7 +9,9 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login', // Cambiado de 'tabs' a 'login'
+
+    redirectTo: 'tabs',
+
     pathMatch: 'full'
   },
   {
