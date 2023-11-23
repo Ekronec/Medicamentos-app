@@ -77,10 +77,25 @@ export class MapaComponent  implements OnInit {
 
     directionRender.setMap(this.mapa);
 
+    const destinos = [
+      'Farmacias Ahumada - Av. Nueva Providencia 1313, 7500592 Santiago, Providencia, Región Metropolitana',
+      '945,, Av. Pedro de Valdivia 909, Providencia, Región Metropolitana',
+      'Av. Pedro de Valdivia 12, Providencia, Región Metropolitana',
+    ];
+    const destinoFinal = destinos[Math.floor(Math.random() * destinos.length)];
+
+  
+
     directionService.route({
 
       origin: 'Antonio Varas 666, Providencia, Región Metropolitana',
-      destination: 'Farmacias Ahumada - Av. Nueva Providencia 1313, 7500592 Santiago, Providencia, Región Metropolitana',
+      waypoints:  destinos
+      .filter(destino => destino !== destinoFinal) // Excluye el destino final de los puntos intermedios
+      .map(destino => ({
+        location: destino,
+        stopover: true,
+      })),
+      destination: destinoFinal,
       travelMode: google.maps.TravelMode.WALKING
 
     }, resultado => {
@@ -92,8 +107,6 @@ export class MapaComponent  implements OnInit {
     });
 
   }
-
-
 
   private cargarAutocomplete() {
 
