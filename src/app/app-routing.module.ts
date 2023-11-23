@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'mapa',
+    redirectTo: 'login', // Cambiado de 'tabs' a 'login'
     pathMatch: 'full'
   },
   {
@@ -37,12 +37,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/historial/historial.module').then( m => m.HistorialPageModule)
   },
   {
-    path: 'mapa', component:MapaComponent
-    
+    path: 'mapa', 
+    component: MapaComponent
   },
-
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
