@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from "../../models/user.model";
 import { LoadingController, NavController, ToastController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 import { Conditional } from '@angular/compiler';
 
 @Component({
@@ -16,9 +17,13 @@ export class RegistroPage implements OnInit {
     private toasCtrl: ToastController,
     private loadingCtrl: LoadingController,
     private afAuth: AngularFireAuth,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private router: Router
   ) { }
 
+  irALogin() {
+    this.router.navigate(['/login']);
+  }
   ngOnInit() { }
 
   async registro(user: User) {

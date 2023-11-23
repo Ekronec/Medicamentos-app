@@ -1,25 +1,20 @@
-<h1>Mapa Angular</h1>
-
-<button (click)="mapRuta()">Calcular ruta</button>
-<h1>La distancia es: {{distancia}}</h1>
-
-
-<div class="formulario">
+<div class="contenedor">
+  <div class="formulario">
     <form [formGroup]="formMapas" (ngSubmit)="onSubmit()">
-  
-      <input type="text" #inputPlaces id="inputPlaces" formControlName="busqueda">
-  
-      <div class="form panel">
-  
-        <div>
-          <img class="sb-title-icon" src="https://fonts.gstatic.com/s/i/googlematerialicons/location_pin/v5/24px.svg"
-            alt="">
-        </div>
-  
-  
+      <label for="inputPlaces" class="sb-title">Buscar Farmacia:</label>
+      <div class="half-input-container">
+        <input type="text" #inputPlaces id="inputPlaces" formControlName="busqueda" placeholder="Ingrese la dirección">
+        <button type="submit" class="button-cta">Buscar</button>
       </div>
-
       <div class="mapa" #divMap></div>
-      
     </form>
   </div>
+  <div class="ruta-container">
+    <label class="etiqueta">Pulsa para ver la farmacia más cercana</label>
+    <ion-icon (click)="mapRuta()" name="compass-outline" class="icono"></ion-icon>
+    <h3>Estás a {{distancia}} de la farmacia más cercana</h3>
+  </div>
+</div>
+<div class="banner-container">
+  <img src="assets/bannerpillboxapp.jpg" alt="Logo de la aplicación">
+</div>

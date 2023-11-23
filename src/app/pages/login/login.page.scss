@@ -42,3 +42,14 @@ p{
 .abtn.large {
   transform: scale(1.2);
 }
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 30vh; 
+  padding: 20px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
