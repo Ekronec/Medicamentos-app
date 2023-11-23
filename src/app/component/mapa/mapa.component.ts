@@ -18,7 +18,8 @@
     markers: google.maps.Marker[];
     distancia!: string;
     formMapas!: FormGroup;
-    ubicacionActual: google.maps.LatLng | null = null;  
+    ubicacionActual: google.maps.LatLng = new google.maps.LatLng(-33.4488897, -70.6692655);
+    private infoWindow = new google.maps.InfoWindow();
 
     constructor(private renderer: Renderer2 , private fb: FormBuilder) {
       this.markers = [];
@@ -70,10 +71,10 @@
       console.log('Datos del formulario: ', this.formMapas.value);
 
       // Luego, puedes llamar a la función para calcular la ruta o realizar otras acciones.
-      this.mapRuta();
+
     }
 
-    mapRuta() {
+    mapRuta(destination: google.maps.LatLng) {
       const directionsService = new google.maps.DirectionsService();
       const directionsRenderer = new google.maps.DirectionsRenderer();
 
@@ -84,7 +85,6 @@
       const provincia = this.formMapas.value.provincia || '';
       const region = this.formMapas.value.region || '';
       
-      const origin = "7500592";
 
       console.log('Origen:', origin);
       console.log('Direccion:', this.formMapas.value.direccion);
@@ -94,12 +94,9 @@
       console.log('Formulario:', this.formMapas.value);
 
 
-      const destination =
-        'Farmacias Ahumada - Av. Nueva Providencia 1313, 7500592 Santiago, Providencia, Región Metropolitana';
-
         directionsService.route(
           {
-            origin: origin,
+            origin: this.ubicacionActual,
             destination: destination,
             travelMode: google.maps.TravelMode.WALKING,
           },
@@ -189,6 +186,13 @@
         google.maps.event.addListener(marker, 'click', () => {
           console.log('Detalles de la farmacia:', farmacia);
           // Puedes realizar acciones adicionales al hacer clic en el marcador.
+          const position = marker.getPosition();
+          if (position) {
+            this.mapRuta(position);
+          } else {
+            console.error('La posición del marcador es nula o indefinida.');
+          }
+          // Abre la ventana de información en el marcador clicado
 
         });
 
