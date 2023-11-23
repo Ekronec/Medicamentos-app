@@ -1,15 +1,10 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="star">
-        <ion-back-button></ion-back-button>
-    </ion-buttons>
-    </ion-toolbar>
 </ion-header>
 <ion-content>
     <div class="login-section ion-padding">
-      <div class="heading ion-padding">
-        <h1 id="logo">Logo</h1>
-      </div>
+      <div class="logo-container">
+        <img src="assets/pillboxapp.png" alt="Logo de la aplicación">
+      </div>  
       <div class="login-form ion-padding">
         <div class="form-input">
           <ion-item >
@@ -29,14 +24,17 @@
           </ion-item>
         </div>
         <br>
-        <div id="remember">
-          <ion-checkbox>Recuérdame</ion-checkbox>
-        </div>
-       
       </div>
       <div class="action-button ion-padding">
-        <ion-button class="signup-button" size="large" fill="outline" (click)="registro(user)">Registrarse</ion-button>
+        <ion-button class="signup-button" size="large" fill="solid" (click)="registro(user)" shape = "round">Registrarse</ion-button>
       </div>
     </div>
+    <ion-content class="ion-padding">
+        <div class="center-content">
+          <ion-button class="circular-button" (click)="irALogin()" shape="round" fill="outline">
+            <ion-icon name="arrow-back"  class="large-icon"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-content>
   </ion-content>
   

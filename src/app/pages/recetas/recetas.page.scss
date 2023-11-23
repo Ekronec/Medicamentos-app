@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 55vh;
+  }
+  
+  .img-container {
+    margin-bottom: 0px; 
+  }
+  
+  .etiqueta {
+    font-size: x-large;
+    text-align: center;
+    color: rgb(0, 0, 0); 
+    font-family: 'Roboto', sans-serif; 
+  }
+.mi-searchbar {
+    font-size: 1.5em; /* Ajusta el tamaño del texto */
+    padding: 30px; /* Ajusta el espaciado interno */
+    width: 100%; /* Ajusta el ancho según tus necesidades */
+  }
+  
+  
